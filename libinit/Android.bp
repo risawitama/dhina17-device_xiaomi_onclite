@@ -6,8 +6,19 @@
 
 cc_library_static {
     name: "libinit_onclite",
-    recovery_available: true,
-    srcs: ["init_onclite.cpp"],
+    srcs: [
+        "libinit_dalvik_heap.cpp",
+        "libinit_utils.cpp",
+    ],
     whole_static_libs: ["libbase"],
-    include_dirs: ["system/core/init"]
+    export_include_dirs: ["include"],
+    recovery_available: true,
+}
+
+cc_library_static {
+    name: "init_onclite",
+    srcs: ["init_onclite.cpp"],
+    whole_static_libs: ["libinit_onclite"],
+    include_dirs: ["system/core/init"],
+    recovery_available: true,
 }
