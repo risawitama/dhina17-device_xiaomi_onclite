@@ -20,6 +20,11 @@ $(call inherit-product, vendor/xiaomi/onclite/onclite-vendor.mk)
 OVERRIDE_TARGET_FLATTEN_APEX := true
 OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 
+# Dynamic Partitions
+PRODUCT_BUILD_SUPER_PARTITION := false
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
@@ -322,6 +327,7 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
+    fstab.qcom_ramdisk \
     init.msm.usb.configfs.rc \
     init.onclite.rc \
     init.qcom.rc \
