@@ -19,6 +19,12 @@ value:2906
 [AID_VENDOR_THERMAL]
 value:2907
 
+[odm/overlayfs/*/bin/*]
+mode: 0755
+user: AID_ROOT
+group: AID_SHELL
+caps: 0
+
 [vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti]
 mode: 0755
 user: AID_BLUETOOTH
