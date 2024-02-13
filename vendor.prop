@@ -64,6 +64,7 @@ vendor.vidc.enc.disable.pq=true
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
+vendor.display.perf_hint_window=50
 
 # Radio
 persist.radio.multisim.config=dsds
