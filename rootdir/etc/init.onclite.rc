@@ -51,3 +51,5 @@ on property:sys.fp.vendor=goodix
 
 on property:sys.fp.vendor=FPC
    setprop ro.boot.fpsensor fpc
+
+on property:init.svc.vendor.charger=running
