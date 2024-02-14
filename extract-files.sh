@@ -58,6 +58,9 @@ function blob_fixup() {
     vendor/lib/hw/camera.msm8953.so)
         "${PATCHELF}" --add-needed libui_shim.so "${2}"
         ;;
+    vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc)
+        sed -i 's|writepid /dev/cpuset/system-background/tasks|task_profiles ServiceCapacityLow|g' "${2}"
+        ;;
     esac
 }
 
